@@ -1,6 +1,15 @@
-.TodoCounter {
-    font-size: 24px;
+h1{
+    font-size: 30px;
     text-align: center;
-    margin:0;
-    padding: 48px;
+    margin:30px 0px 0px 0px;
+    padding: 0px;
+
+}
+
+.TodoCounter {
+    font-size: 15px;
+    text-align: center;
+    margin:0px 0px 30px 0px;
+    padding: 4px;
+    color:rgb(130, 50, 206)
 }
