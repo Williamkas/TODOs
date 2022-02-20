@@ -7,7 +7,7 @@ function TodoCounter(){
 
     return (
         <div>
-            <h1>Your To-DOs!</h1>
+            <h1>Your TO-DOs!</h1>
             <h2 className="TodoCounter">Completed {completedTodos} of {totalTodos} TO-DOs.</h2>
         </div>
     )

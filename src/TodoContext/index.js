@@ -41,7 +41,9 @@ function TodoProvider(props){
       const completeTodo = (text)=> {
         const todoIndex = todos.findIndex(todo => todo.text === text); //en este caso usamos el texto dado que es lo unico que identifica cada elemento del array de todos. Si tuvieramos un id lo usaríamos.
         const newTodos = [...todos]; //Acá estoy clonando el array todos, dado que NO se puede editar el estado de react, pero si le puedo enviar una nueva lista igual, usando el ...todos.
-        newTodos[todoIndex].completed=true; 
+        if (!!newTodos[todoIndex].completed){
+          newTodos[todoIndex].completed=false
+        } else(newTodos[todoIndex].completed=true)
         saveTodos(newTodos)
       };
 
