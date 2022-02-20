@@ -2,7 +2,7 @@
     background: #F9FBFC;
     border-radius: 10px;
     border: none;
-    margin: 0 24px;
+    margin: 0 29px 0 0px;
     height: 40px;
     width: calc(100% - 62px);
     font-size: 20px;
@@ -30,9 +30,10 @@
     justify-content: center;
   }
 
- img{
+ .lupita{
    display:inline-block;
-   width:30px;
+   width: 30px;
    height: 30px;
-   margin-left: -15px;
+   margin-left: -60px;
+   opacity: 0.4;
  }

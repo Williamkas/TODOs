@@ -18,7 +18,7 @@ function TodoProvider(props){
     
       let searchedTodos = [];
       if(searchValue.length >= 1){ //Acá veo si la longitud del string searchValue es mayor a 0, es decir, si el usuario ha escrito algo en el input.
-        searchedTodos = todos.filter (todo => {
+        searchedTodos = todos.filter(todo => {
           const todoText = todo.text.toLowerCase(); //Primero lo paso todo   minúsculas para poder compararlo sin distinción de mayúsculas o minúsculas
           const searchText = searchValue.toLowerCase(); //Igual acá.
           return todoText.includes(searchText); //Retornamos la condición de evalución del filter.

@@ -19,7 +19,7 @@ function TodoSearch (){
                 onChange={onSearchValueChange} //El evento onchange se produce cuando el valor de un elemento se ha cambiado.
                 value={searchValue} // React nos pide que lo conectamos con nuestro estado. 
             />  
-            <img src='https://cdn.icon-icons.com/icons2/1659/PNG/512/3844432-magnifier-search-zoom_110300.png'>
+            <img className='lupita' src='https://cdn.icon-icons.com/icons2/1659/PNG/512/3844432-magnifier-search-zoom_110300.png' alt='lupa'>
             </img>
         </div>
         
