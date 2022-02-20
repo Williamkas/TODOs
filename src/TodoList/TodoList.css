@@ -12,6 +12,21 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 50px;
     
+}
+
+.inicio {
+    display: grid;
+    place-content: center;
+}
+
+.lista{
+    display: inline-block;
+    margin-left:25px;
+    margin-top:30px;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: auto;
 }
