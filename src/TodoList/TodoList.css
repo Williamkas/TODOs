@@ -3,3 +3,15 @@ ul {
     padding: 0 0 56px 0;
     list-style: none;
 }
+
+.prevew{
+    color:rgb(14, 55, 167);
+    width:100%;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    
+}

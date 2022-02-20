@@ -18,10 +18,26 @@ function TodoForm() {
         setOpenModal(false)
     }
 
+
+    // const onSubmit = (event ) => {
+    //     event.preventDefault(); //Este es un método que tiene javaScript para evitar que se recargue la página al clickear el submit.
+    //     if(!textarea.value){
+    //         alert('Esta vacío')
+    //     } else{
+    //         setnewTodoValue(event.target.value)
+    //         addTodo(newTodoValue);
+    //         setOpenModal(false)
+    //     }
+
+    // }
+
     const onSubmit = (event ) => {
         event.preventDefault(); //Este es un método que tiene javaScript para evitar que se recargue la página al clickear el submit.
+        setnewTodoValue(event.target.value)
         addTodo(newTodoValue);
         setOpenModal(false)
+        
+
     }
 
     return (
@@ -31,7 +47,7 @@ function TodoForm() {
             <textarea
                 value={newTodoValue}
                 onChange={onChange}
-                placeholder='Estudiar programación...'
+                placeholder='Study web development...'
             />
 
             <div className="TodoForm-buttonContainer">
