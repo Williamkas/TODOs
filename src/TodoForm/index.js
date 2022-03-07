@@ -33,11 +33,10 @@ function TodoForm() {
 
     const onSubmit = (event ) => {
         event.preventDefault(); //Este es un método que tiene javaScript para evitar que se recargue la página al clickear el submit.
-        setnewTodoValue(event.target.value)
+        setnewTodoValue(event.target.value);
         addTodo(newTodoValue);
         setOpenModal(false)
-        
-
+    
     }
 
     return (

@@ -25,7 +25,7 @@ function useLocalStorage(itemName, initialValue){ //Este es nuetro custom Hooks!
             setError(error)
         }
   
-      },1000)
+      },2000)
     },[])
 
         // React.useEffect(()=>{

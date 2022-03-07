@@ -12,6 +12,7 @@ function TodoProvider(props){
     
       const [searchValue, setSearchValue] = React.useState('');
       const [openModal, setOpenModal] = React.useState(false);
+      let inicio = true;
     
       const completedTodos = todos.filter(todo => !!todo.completed).length; // El signo !! es lo mismo que hacer: todo.completed==true y el signo ! es lo mismo que hacer: todo.completed==false. El filter genera un nuevo array que concuerdan con las condiciones indicadas, en este caso, todos los completed que sean true. Luego con el length obtengo la cantidad de completed==true.
       const totalTodos = todos.length;
@@ -68,7 +69,8 @@ function TodoProvider(props){
             deleteTodo,
             openModal,
             setOpenModal,
-            addTodo
+            addTodo,
+            inicio
         }}>
             {props.children}
         </TodoContext.Provider>

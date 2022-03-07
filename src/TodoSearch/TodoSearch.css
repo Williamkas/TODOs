@@ -4,7 +4,7 @@
     border: none;
     margin: 0 29px 0 0px;
     height: 40px;
-    width: calc(100% - 62px);
+    width: calc(100% - 800px);
     font-size: 20px;
     text-align: center;
     font-family: 'Montserrat';
@@ -21,7 +21,7 @@
   }
   
   .TodoSearch:focus {
-    outline-color: #630dee;
+    outline-color: #63615b;
   }
 
   .searcher{
