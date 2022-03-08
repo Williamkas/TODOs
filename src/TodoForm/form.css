@@ -12,7 +12,7 @@ form {
     text-align: center;
     font-weight: bold;
     font-size: 25px;
-    color: rgb(14, 55, 167);
+    color: rgb(49, 141, 191);
     margin-bottom: 26px;
   }
   
@@ -36,7 +36,7 @@ form {
   }
   
   textarea:focus {
-    outline-color: #6e0eeb;
+    outline-color: #746f79;
   }
   
   .TodoForm-buttonContainer {
