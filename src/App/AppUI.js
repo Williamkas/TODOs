@@ -18,7 +18,6 @@ function AppUI(){
         deleteTodo,
         openModal,
         setOpenModal,
-        inicio,
         totalTodos
     }= React.useContext(TodoContext);
 
@@ -34,9 +33,9 @@ function AppUI(){
                     <div className="inicio">
                         <p className="prevew">Create your first TO-DO!</p>
                         <img className='lista' src='https://media.istockphoto.com/photos/shoppinglist-concept-picture-id1072899070?k=20&m=1072899070&s=612x612&w=0&h=2Kg5Mo5kci5adRQJV_QYFnLlHcbjmYiBg3io0jM7ijs=' alt='lista'></img>
-                    </div>   
+                    </div>
                 }
-                {(totalTodos && !searchedTodos.length) && <p className="prevew">There´s not TO-DOs that match with '{searchValue}'</p>}
+                {(!!totalTodos && !searchedTodos.length) && <p className="prevew">There´s not TO-DOs that match with '{searchValue}'</p>}
 
 
                 {searchedTodos.map( todo => (
