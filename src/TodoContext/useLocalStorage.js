@@ -21,12 +21,12 @@ function useLocalStorage(itemName, initialValue){ //Este es nuetro custom Hooks!
           setItem(parsedItem);
           setLoading(false);
           }
-          catch {
+          catch{
             setError(error)
         }
   
       },2000)
-    },[])
+    },[]);
 
         // React.useEffect(()=>{
       //   console.log('useeffect')

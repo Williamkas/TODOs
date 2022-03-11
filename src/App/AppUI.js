@@ -1,5 +1,6 @@
 import React from "react";
 import { TodoContext } from "../TodoContext";
+import {TodoHeader} from '../TodoHeader';
 import { TodoCounter } from "../TodoCounter";
 import { TodoSearch } from "../TodoSearch";
 import { TodoList } from "../TodoList";
@@ -7,6 +8,7 @@ import { TodoItem } from "../TodoItem";
 import { CreateTodoButton } from "../CreateTodoButton";
 import { Modal } from "../Modal";
 import { TodoForm } from "../TodoForm";
+import { ChangeAlert } from "../ChangeAlert";
 
 function AppUI(){
     const {
@@ -14,6 +16,8 @@ function AppUI(){
         loading, 
         searchedTodos,
         searchValue,
+        setSearchValue,
+        completedTodos,
         completeTodo, 
         deleteTodo,
         openModal,
@@ -23,8 +27,22 @@ function AppUI(){
 
     return (
         <React.Fragment>
-            <TodoCounter/>
-            <TodoSearch/>
+            
+            <TodoHeader>
+                <TodoCounter
+                totalTodos={totalTodos} 
+                completedTodos={completedTodos} 
+                loading={loading}
+                />
+                
+                <TodoSearch
+                searchValue={searchValue} 
+                setSearchValue={setSearchValue}  
+                searchedTodos={searchedTodos}
+                loading={loading}
+                totalTodos={totalTodos}
+                />
+            </TodoHeader>
             
             <TodoList> 
                 {error && <p className="prevew">There´s an error...</p>}
@@ -59,6 +77,8 @@ function AppUI(){
                 setOpenModal={setOpenModal}
             />
       
+            <ChangeAlert/>
+            
         </React.Fragment>
     )
 }

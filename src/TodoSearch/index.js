@@ -1,10 +1,8 @@
 import React from "react";
-import { TodoContext } from "../TodoContext";
 import './TodoSearch.css'
 import lupa from '../assets/3844432-magnifier-search-zoom_110300.png';
 
-function TodoSearch (){
-    const {searchValue, setSearchValue, loading, searchedTodos, totalTodos} = React.useContext(TodoContext);
+function TodoSearch ({searchValue, setSearchValue, loading, searchedTodos, totalTodos}){
 
     const onSearchValueChange = (event) => {
         console.log(event.target.value) //Con target.value obtenemos resultado o el valor cada vez que se usa el teclado, o se ingresa un dato.
