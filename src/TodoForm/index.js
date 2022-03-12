@@ -18,25 +18,15 @@ function TodoForm() {
         setOpenModal(false)
     }
 
-    //Acá quiero que cuando se ingrese un dato vacío no se cree el TODO.
-    // const onSubmit = (event ) => {
-    //     event.preventDefault(); //Este es un método que tiene javaScript para evitar que se recargue la página al clickear el submit.
-    //     if(!textarea.value){
-    //         alert('Esta vacío')
-    //     } else{
-    //         setnewTodoValue(event.target.value)
-    //         addTodo(newTodoValue);
-    //         setOpenModal(false)
-    //     }
-
-    // }
-
     const onSubmit = (event ) => {
         event.preventDefault(); //Este es un método que tiene javaScript para evitar que se recargue la página al clickear el submit.
-        setnewTodoValue(event.target.value);
-        addTodo(newTodoValue);
-        setOpenModal(false)
-    
+        if(!newTodoValue){
+            alert('Por favor ingrese el nombre del nuevo TO-DO.')
+        } else{
+            setnewTodoValue(event.target.value)
+            addTodo(newTodoValue);
+            setOpenModal(false)
+        }
     }
 
     return (
