@@ -12,7 +12,6 @@ function TodoProvider(props){
     
       const [searchValue, setSearchValue] = React.useState('');
       const [openModal, setOpenModal] = React.useState(false);
-      let inicio = true;
     
       const completedTodos = todos.filter(todo => !!todo.completed).length; // El signo !! es lo mismo que hacer: todo.completed==true y el signo ! es lo mismo que hacer: todo.completed==false. El filter genera un nuevo array que concuerdan con las condiciones indicadas, en este caso, todos los completed que sean true. Luego con el length obtengo la cantidad de completed==true.
       const totalTodos = todos.length;
@@ -28,23 +27,34 @@ function TodoProvider(props){
         searchedTodos = todos;
       }
 
-      //Añadir tareas
-      const addTodo = (text)=> {
+      //Añadir ToDo's
+      const addTodo = (text, description)=> {
         const newTodos = [...todos]; 
         newTodos.push({
           completed:false,
-          text
+          show:false,
+          text,
+          description,
         }); 
         saveTodos(newTodos)
       };
 
-      //Completar y descompletar tareas
+      //Completar y descompletar To-Do's
       const completeTodo = (text)=> {
         const todoIndex = todos.findIndex(todo => todo.text === text); //en este caso usamos el texto dado que es lo unico que identifica cada elemento del array de todos. Si tuvieramos un id lo usaríamos.
         const newTodos = [...todos]; //Acá estoy clonando el array todos, dado que NO se puede editar el estado de react, pero si le puedo enviar una nueva lista igual, usando el ...todos.
-        if (!!newTodos[todoIndex].completed){
+        if (newTodos[todoIndex].completed){
           newTodos[todoIndex].completed=false
         } else(newTodos[todoIndex].completed=true)
+        saveTodos(newTodos)
+      };
+      //Mostrar y Ocultar Description de To-Do's
+      const descriptionTodo = (text)=> {
+        const todoIndex = todos.findIndex(todo => todo.text === text); //en este caso usamos el texto dado que es lo unico que identifica cada elemento del array de todos. Si tuvieramos un id lo usaríamos.
+        const newTodos = [...todos]; //Acá estoy clonando el array todos, dado que NO se puede editar el estado de react, pero si le puedo enviar una nueva lista igual, usando el ...todos.
+        if (newTodos[todoIndex].show){
+          newTodos[todoIndex].show=false
+        } else(newTodos[todoIndex].show=true)
         saveTodos(newTodos)
       };
 
@@ -66,11 +76,11 @@ function TodoProvider(props){
             setSearchValue,
             searchedTodos,
             completeTodo,
+            descriptionTodo,
             deleteTodo,
             openModal,
             setOpenModal,
             addTodo,
-            inicio
         }}>
             {props.children}
         </TodoContext.Provider>

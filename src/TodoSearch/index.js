@@ -19,7 +19,11 @@ function TodoSearch ({searchValue, setSearchValue, loading, searchedTodos, total
                 value={searchValue} // React nos pide que lo conectamos con nuestro estado. 
                 disabled={loading || (!loading && !searchedTodos.length && !totalTodos)}
             />  
-            <img className='lupita' src={lupa} alt='lupa'>
+            <img 
+                className={`lupita ${(loading || (!loading && !searchedTodos.length && !totalTodos)) && 'lupita-disabled'}`} 
+                src={lupa} 
+                alt='lupa'
+            >
             </img>
         </div>
         

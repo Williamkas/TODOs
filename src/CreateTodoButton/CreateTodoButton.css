@@ -24,3 +24,12 @@
   .CreateTodoButton:hover {
     transform: rotate(180deg);
   }
+
+  .Add{
+  font-weight: bold;
+  font-size: 18px;
+  position: fixed;
+  bottom: 25px;
+  right: 95px;
+  color: #746f79;
+}

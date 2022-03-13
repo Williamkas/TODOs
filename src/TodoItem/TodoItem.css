@@ -2,11 +2,26 @@
     background-color: #ffffff;
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 24px;
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
     border-radius: 15px;
+    font-weight:700;
+  }
+
+  .Todofull{
+    width: 1250px;
+  }
+
+  .TodoItemDescriptionOff{
+    display:none;
+  }
+  .TodoItemDescription{
+    color: #000000;
+    text-align: left;
+    font-weight:100;
   }
   
   .TodoItem-img {
@@ -15,6 +30,10 @@
     font-size: 18px;
     line-height: 24px;
     font-weight: 400;
+  }
+
+  .TodoItemDescriptionOffComplete{
+    text-decoration: line-through;
   }
 
   .TodoItem-p--complete {
@@ -74,3 +93,9 @@
     color: white;
   }
   
+
+  @media (max-width:640px){ 
+    .Todofull{
+      width: 200px;
+    }
+  }

@@ -14,9 +14,17 @@ function TodoItem(props){
                  onClick={props.onComplete} alt='empty check'>
             </img>
 
-            <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}> {/* si props.complete es true, diferente de null o undefined  entonces si aplicara el estilo de la clase 'TodoItem-p--complete'*/}
-                {props.text}
-            </p>
+            <div className="Todofull">
+                <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`} 
+                onClick={props.onDescription}
+                >                                                                       {/* si props.complete es true, diferente de null o undefined  entonces si aplicara el estilo de la clase 'TodoItem-p--complete'*/}
+                    {props.text}
+                </p>
+
+                <p className={`TodoItemDescription ${(props.show && 'TodoItemDescriptionOff') || (props.completed && 'TodoItemDescriptionOffComplete') }`}>
+                    {props.description}
+                </p>
+            </div>
 
             <div className="Icon-2">
                 <span className="Icon-2 Icon-delete" onClick={props.onDelete}> {/* si necesito pasarle un argumento a la función debo usar un arrow function para que no se inicialice la función automáticamente antes de hacer click */}

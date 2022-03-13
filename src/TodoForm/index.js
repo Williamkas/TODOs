@@ -4,14 +4,18 @@ import './form.css'
 
 function TodoForm() {
     const[newTodoValue, setnewTodoValue]= React.useState('');
+    const[newTodoDescription, setnewTodoDescription]= React.useState('');
 
     const {
         addTodo,
         setOpenModal
     } = React.useContext(TodoContext);
 
-    const onChange = (event) => {
+    const onChangeValue = (event) => {
         setnewTodoValue(event.target.value);
+    }
+    const onChangeDescription = (event) => {
+        setnewTodoDescription(event.target.value);
     }
 
     const onCancel = () => {
@@ -20,11 +24,12 @@ function TodoForm() {
 
     const onSubmit = (event ) => {
         event.preventDefault(); //Este es un método que tiene javaScript para evitar que se recargue la página al clickear el submit.
-        if(!newTodoValue){
-            alert('Por favor ingrese el nombre del nuevo TO-DO.')
+        if(!newTodoValue && !newTodoDescription){
+            alert('Please add the name or the description of the new To-Do.')
         } else{
             setnewTodoValue(event.target.value)
-            addTodo(newTodoValue);
+            setnewTodoDescription(event.target.value)
+            addTodo(newTodoValue, newTodoDescription);
             setOpenModal(false)
         }
     }
@@ -33,10 +38,17 @@ function TodoForm() {
         <form onSubmit={onSubmit}>
             <label>Write your new TO-DO</label>
 
-            <textarea
+            <input
+                type="text"
                 value={newTodoValue}
-                onChange={onChange}
-                placeholder='Study web development...'
+                onChange={onChangeValue}
+                placeholder='Title'
+            />
+
+            <textarea
+                value={newTodoDescription}
+                onChange={onChangeDescription}
+                placeholder='Details'
             />
 
             <div className="TodoForm-buttonContainer">

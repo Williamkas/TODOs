@@ -11,15 +11,15 @@ form {
   label {
     text-align: center;
     font-weight: bold;
-    font-size: 25px;
-    color: rgb(49, 141, 191);
+    font-size: 22px;
+    color: rgb(0, 0, 0);
     margin-bottom: 26px;
   }
   
-  textarea {
+  textarea, input {
     background-color: #F9FBFC;
     border: none;
-    border-radius: 9px;
+    border-radius: 0 0 9px 9px;
     box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.5);
     color: #1E1E1F;
     font-size: 15px;
@@ -29,13 +29,16 @@ form {
     width: calc(100%-25px);
   }
   
-  textarea::placeholder {
-  color: #a5a5a5;
+  input{
+    height: 20px;
+    border-radius: 9px 9px 0 0;
+  }
+  textarea,input::placeholder {
   font-family: 'Montserrat';
   font-weight: 400;
   }
   
-  textarea:focus {
+  textarea,input:focus {
     outline-color: #746f79;
   }
   
