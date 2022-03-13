@@ -62,11 +62,12 @@ function AppUI(){
                     key={todo.text} //Para evitar renders innecesarios se debe colocar la propiedad key para enviar identificadores únicos a cada uno de nuestros componentes. En este caso el text es la única propiedad diferente de cada elemento del array Todos.
                     text={todo.text}
                     description={todo.description}
+                    id={todo.id}
                     show={todo.show}
                     completed={todo.completed}
-                    onComplete={() => completeTodo(todo.text)}
-                    onDescription={() => descriptionTodo(todo.text)}
-                    onDelete={() => deleteTodo(todo.text)}
+                    onComplete={() => completeTodo(todo.id)}
+                    onDescription={() => descriptionTodo(todo.id)}
+                    onDelete={() => deleteTodo(todo.id)}
                     /> 
                 ))} 
             </TodoList> 

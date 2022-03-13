@@ -3,7 +3,7 @@ import { TodoContext } from "../TodoContext";
 import './form.css'
 
 function TodoForm() {
-    const[newTodoValue, setnewTodoValue]= React.useState('');
+    const[newTodoText, setnewTodoText]= React.useState('');
     const[newTodoDescription, setnewTodoDescription]= React.useState('');
 
     const {
@@ -11,8 +11,8 @@ function TodoForm() {
         setOpenModal
     } = React.useContext(TodoContext);
 
-    const onChangeValue = (event) => {
-        setnewTodoValue(event.target.value);
+    const onChangeText = (event) => {
+        setnewTodoText(event.target.value);
     }
     const onChangeDescription = (event) => {
         setnewTodoDescription(event.target.value);
@@ -24,12 +24,12 @@ function TodoForm() {
 
     const onSubmit = (event ) => {
         event.preventDefault(); //Este es un método que tiene javaScript para evitar que se recargue la página al clickear el submit.
-        if(!newTodoValue && !newTodoDescription){
+        if(!newTodoText && !newTodoDescription){
             alert('Please add the name or the description of the new To-Do.')
         } else{
-            setnewTodoValue(event.target.value)
+            setnewTodoText(event.target.value)
             setnewTodoDescription(event.target.value)
-            addTodo(newTodoValue, newTodoDescription);
+            addTodo(newTodoText, newTodoDescription);
             setOpenModal(false)
         }
     }
@@ -40,8 +40,8 @@ function TodoForm() {
 
             <input
                 type="text"
-                value={newTodoValue}
-                onChange={onChangeValue}
+                value={newTodoText}
+                onChange={onChangeText}
                 placeholder='Title'
             />
 

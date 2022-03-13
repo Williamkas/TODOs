@@ -28,6 +28,10 @@ form {
     height: 96px;
     width: calc(100%-25px);
   }
+
+  textarea{
+    resize: none;
+  }
   
   input{
     height: 20px;

@@ -4,11 +4,16 @@ import './TodoItem.css';
 
 function TodoItem(props){
     
-    const {
-        addTodo,
-        setOpenModal
-    } = React.useContext(TodoContext);
+    // const {
+    //     addTodo,
+    // } = React.useContext(TodoContext);
 
+    // const[editTodo, setEditTodo]= React.useState('');
+
+    // const onEditValue = (event) => {
+    //     setEditTodo(event.target.value);
+    //     addTodo(editTodo, setEditTodo)
+    // }
     
 
     return (
@@ -31,14 +36,20 @@ function TodoItem(props){
                 </p>
 
                 <p className={`TodoItemDescription ${(!props.show && 'TodoItemDescriptionOff') || (props.completed && 'TodoItemDescriptionOffComplete') }`}>
+                    
                     {props.description}
+                   
+                    {/* <input
+                            type='text'
+                            value={editTodo}
+                            onChange={onEditValue}
+                        >
+                            {props.description}
+                        </input> */}
                 </p>
 
-                {/* <input
-                    type="text"
-                    value={newTodoValue}
-                    onChange={onEditValue}
-                /> */}
+                {console.log(props.id)}
+
             </div>
 
             <div className="Icon-2">
