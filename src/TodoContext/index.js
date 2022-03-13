@@ -39,6 +39,16 @@ function TodoProvider(props){
         saveTodos(newTodos)
       };
 
+    //   //Editar ToDo
+    //   const onEditValue = (text, event) => {
+    //     const newTodos = [...todos]; 
+    //     newTodos.push({
+    //       text,
+    //       description,
+    //     }); 
+    //     setnewTodoValue(event.target.value);
+    // }
+
       //Completar y descompletar To-Do's
       const completeTodo = (text)=> {
         const todoIndex = todos.findIndex(todo => todo.text === text); //en este caso usamos el texto dado que es lo unico que identifica cada elemento del array de todos. Si tuvieramos un id lo usaríamos.
@@ -48,6 +58,7 @@ function TodoProvider(props){
         } else(newTodos[todoIndex].completed=true)
         saveTodos(newTodos)
       };
+
       //Mostrar y Ocultar Description de To-Do's
       const descriptionTodo = (text)=> {
         const todoIndex = todos.findIndex(todo => todo.text === text); //en este caso usamos el texto dado que es lo unico que identifica cada elemento del array de todos. Si tuvieramos un id lo usaríamos.

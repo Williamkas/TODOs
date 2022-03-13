@@ -1,7 +1,16 @@
 import React from "react";
+import { TodoContext } from "../TodoContext";
 import './TodoItem.css';
 
 function TodoItem(props){
+    
+    const {
+        addTodo,
+        setOpenModal
+    } = React.useContext(TodoContext);
+
+    
+
     return (
         <li className="TodoItem">
             <img src='https://media.istockphoto.com/vectors/green-tick-checkmark-vector-icon-for-checkbox-marker-symbol-vector-id1079725292?k=20&m=1079725292&s=612x612&w=0&h=PQB6T2JxK4NILecaf1MBcuZmvP2G5wYKNJ3doMsGVrk=' 
@@ -24,6 +33,12 @@ function TodoItem(props){
                 <p className={`TodoItemDescription ${(props.show && 'TodoItemDescriptionOff') || (props.completed && 'TodoItemDescriptionOffComplete') }`}>
                     {props.description}
                 </p>
+
+                {/* <input
+                    type="text"
+                    value={newTodoValue}
+                    onChange={onEditValue}
+                /> */}
             </div>
 
             <div className="Icon-2">

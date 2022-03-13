@@ -4,7 +4,7 @@ import './TodoHeader.css';
 const TodoHeader = ({children}) => {
 
     return (
-        <header className="header">
+        <header>
             {children}
         </header>
     )
