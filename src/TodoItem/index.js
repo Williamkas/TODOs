@@ -30,7 +30,7 @@ function TodoItem(props){
                     {props.text}
                 </p>
 
-                <p className={`TodoItemDescription ${(props.show && 'TodoItemDescriptionOff') || (props.completed && 'TodoItemDescriptionOffComplete') }`}>
+                <p className={`TodoItemDescription ${(!props.show && 'TodoItemDescriptionOff') || (props.completed && 'TodoItemDescriptionOffComplete') }`}>
                     {props.description}
                 </p>
 

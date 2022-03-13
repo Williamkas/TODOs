@@ -16,6 +16,17 @@ ul {
     margin-top: 50px;
     
 }
+.prevewDos{
+    color:rgb(0, 0, 0);
+    width:100%;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    
+}
 
 .inicio {
     display: grid;

@@ -24,7 +24,7 @@
     outline-color: #63615b;
   }
   .TodoSearch:disabled {
-    opacity: 25%;
+    display:none;
   }
 
   .searcher{
@@ -42,5 +42,5 @@
  }
 
  .lupita-disabled{
-   opacity:10%;
+   display:none
  }
