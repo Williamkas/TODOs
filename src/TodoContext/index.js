@@ -21,15 +21,15 @@ function TodoProvider(props){
       let searchedTodos = [];
       if(searchValue.length >= 1){ //Acá veo si la longitud del string searchValue es mayor a 0, es decir, si el usuario ha escrito algo en el input.
         searchedTodos = todos.filter(todo => {
-          const todoText = todo.text.toLowerCase(); //Primero lo paso todo   minúsculas para poder compararlo sin distinción de mayúsculas o minúsculas
+          const todoText = todo.text.toLowerCase(); //Primero lo paso todo minúsculas para poder compararlo sin distinción de mayúsculas o minúsculas
           const searchText = searchValue.toLowerCase(); //Igual acá.
-          return todoText.includes(searchText); //Retornamos la condición de evalución del filter.
+          return todoText.includes(searchText)
         });
       } else { 
         searchedTodos = todos;
       }
 
-      //Añadir ToDo's
+      //Añadir To-Do's
       const addTodo = (text, description)=> {
         const newTodos = [...todos]; 
         setIdent(ident+1);
@@ -43,23 +43,23 @@ function TodoProvider(props){
         saveTodos(newTodos)
       };
 
-    //   //Editar ToDo
-    //   const onEditValue = (text, event) => {
-    //     const newTodos = [...todos]; 
-    //     newTodos.push({
-    //       text,
-    //       description,
-    //     }); 
-    //     setnewTodoValue(event.target.value);
-    // }
+      //Editar ToDo    
+      const editTodo = (id, text, description) => {
+
+        const todoIndex = todos.findIndex(todo => todo.id === id);
+        const newTodos = [...todos]; 
+        newTodos[todoIndex].text=text;
+        newTodos[todoIndex].description=description;
+        saveTodos(newTodos);
+      }
 
       //Completar y descompletar To-Do's
       const completeTodo = (id)=> {
         const todoIndex = todos.findIndex(todo => todo.id === id); //en este caso usamos el texto dado que es lo unico que identifica cada elemento del array de todos. Si tuvieramos un id lo usaríamos.
         const newTodos = [...todos]; //Acá estoy clonando el array todos, dado que NO se puede editar el estado de react, pero si le puedo enviar una nueva lista igual, usando el ...todos.
         if (newTodos[todoIndex].completed){
-          newTodos[todoIndex].completed=false
-        } else(newTodos[todoIndex].completed=true)
+          newTodos[todoIndex].completed=false;
+        } else(newTodos[todoIndex].completed=true);
         saveTodos(newTodos)
       };
 
@@ -68,8 +68,8 @@ function TodoProvider(props){
         const todoIndex = todos.findIndex(todo => todo.id === id); //en este caso usamos el texto dado que es lo unico que identifica cada elemento del array de todos. Si tuvieramos un id lo usaríamos.
         const newTodos = [...todos]; //Acá estoy clonando el array todos, dado que NO se puede editar el estado de react, pero si le puedo enviar una nueva lista igual, usando el ...todos.
         if (newTodos[todoIndex].show){
-          newTodos[todoIndex].show=false
-        } else(newTodos[todoIndex].show=true)
+          newTodos[todoIndex].show=false;
+        } else(newTodos[todoIndex].show=true);
         saveTodos(newTodos)
       };
 
@@ -96,6 +96,7 @@ function TodoProvider(props){
             openModal,
             setOpenModal,
             addTodo,
+            editTodo,
         }}>
             {props.children}
         </TodoContext.Provider>

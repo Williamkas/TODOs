@@ -1,20 +1,16 @@
 import React from "react";
-import { TodoContext } from "../TodoContext";
 import './TodoItem.css';
 
 function TodoItem(props){
-    
-    // const {
-    //     addTodo,
-    // } = React.useContext(TodoContext);
 
-    // const[editTodo, setEditTodo]= React.useState('');
+    // const[editText, setEditText]= React.useState('');
+    // const[editDescription, setEditDescription]= React.useState('');
 
-    // const onEditValue = (event) => {
-    //     setEditTodo(event.target.value);
-    //     addTodo(editTodo, setEditTodo)
+    // const onEdit = (id, text, description) => {
+    //     setEditText(text.target.value);
+    //     setEditDescription(description.target.value);    
+    //     props.onEditTodo(id, editText, editDescription)
     // }
-    
 
     return (
         <li className="TodoItem">
@@ -37,15 +33,15 @@ function TodoItem(props){
 
                 <p className={`TodoItemDescription ${(!props.show && 'TodoItemDescriptionOff') || (props.completed && 'TodoItemDescriptionOffComplete') }`}>
                     
-                    {props.description}
+                    {props.description} 
                    
                     {/* <input
                             type='text'
-                            value={editTodo}
-                            onChange={onEditValue}
+                            value={editDescription}
+                            onChange={onEdit}
                         >
-                            {props.description}
-                        </input> */}
+                           
+                    </input> */}
                 </p>
 
                 {console.log(props.id)}
