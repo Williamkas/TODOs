@@ -5,7 +5,7 @@ function TodoCounter({totalTodos, completedTodos, loading}){
   
     return (
         <div>
-            <h1>Your TO-DOs!</h1>
+            <h1>Your TO-DO list!</h1>
             <h2 className={`TodoCounter ${(!totalTodos || loading) && 'NotTodo'}`}>Completed {completedTodos} of {totalTodos} TO-DOs.</h2>
         </div>
     )
