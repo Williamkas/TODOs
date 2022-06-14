@@ -1,10 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import { TodoContext } from "../TodoContext";
 import './form.css'
 
 function TodoForm() {
-    const[newTodoText, setnewTodoText]= React.useState('');
-    const[newTodoDescription, setnewTodoDescription]= React.useState('');
+    const[newTodoText, setnewTodoText]= useState('');
+    const[newTodoDescription, setnewTodoDescription]= useState('');
 
     const {
         addTodo,
@@ -27,8 +27,6 @@ function TodoForm() {
         if(!newTodoText && !newTodoDescription){
             alert('Please add the name or the description of the new To-Do.')
         } else{
-            setnewTodoText(event.target.value)
-            setnewTodoDescription(event.target.value)
             addTodo(newTodoText, newTodoDescription);
             setOpenModal(false)
         }
